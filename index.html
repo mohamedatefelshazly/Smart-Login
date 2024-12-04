@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart-Login</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/indexStyle.css" />
+  </head>
+  <body>
+    <div class="w-50 m-5 text-center mx-auto p-5" id="frameId">
+      <h1 class="mb-3">Smart Login System</h1>
+      <!-- login page -->
+      <div id="loginForm" class="d-flex flex-column row-gap-3">
+        <input
+          type="text"
+          id="signNameId"
+          class="form-control d-none"
+          placeholder="Enter Your Name"
+        />
+        <input
+          type="email"
+          id="inputEmailId"
+          class="form-control"
+          placeholder="Enter Your Email"
+        />
+        <input
+          type="password"
+          id="inputPasswordId"
+          class="form-control"
+          placeholder="Enter Your Password"
+        />
+        <button type="button" id="loginBtn" class="form-control">Login</button>
+        <button type="button" id="Signupbtn" class="form-control d-none">
+          Sign Up
+        </button>
+        <p class="d-none h2 text-danger">Invalid User or password</p>
+        <span class="h2 d-none  text-success">success</span>
+        <div class="text-white" id="signupIdparent">
+          Don’t have an account? <a id="signupId" href="#">Sign Up</a>
+        </div>
+        <div class="text-white d-none" id="loginIdparent">
+          You have an account? <a id="loginId" href="#">sign in</a>
+        </div>
+      </div>
+    </div>
+    <!-- smart log in -->
+    <div id="smartLoginId" class="d-none vh-100 d-flex justify-content-center align-items-center">
+      <nav
+        class="navbar navbar-expand-lg bg-body-tertiary position-absolute top-0 start-0 end-0"
+      >
+        <div class="container px-5">
+          <a class="navbar-brand text-white ms-5" href="#">SMART LOGIN</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarScroll"
+            aria-controls="navbarScroll"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul
+              class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll"
+              style="--bs-scroll-height: 100px"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link active p-2 rounded-3 text-white-50"
+                  aria-current="page"
+                  href="#"
+                  id="logoutbtn"
+                  >Logout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="w-50 mx-auto text-center text-white fw-bold h1 p-5"
+        id="displayId"
+      >
+        Welcome Mohamed
+      </div>
+    </div>
+    <!-- JS -->
+    <script src="JS/bootstrap.bundle.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
+</html>
