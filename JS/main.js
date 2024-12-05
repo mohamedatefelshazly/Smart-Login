@@ -27,9 +27,17 @@ loginBtn.addEventListener("click", function () {
     smartLoginId.classList.remove("d-none");
     displayId.innerHTML = `<h1>Welcome ${users[index].userName}</h1>`;
     clearInputs();
-  } else {
+  }else if(inputEmailId.value==""||inputPasswordId.value==""){
     p.classList.remove("d-none");
-    p.innerHTML = "Invalid User or password";
+    p.innerHTML = "All inputs needed";
+  }
+   else if(emailsaved()) {
+    p.classList.remove("d-none");
+    p.innerHTML = "Email not found, Go to sign up";
+  }
+  else{
+    p.classList.remove("d-none");
+    p.innerHTML = "Password is incorrect ,Try again";
   }
 });
 signupId.addEventListener("click", function () {
@@ -40,6 +48,8 @@ signupId.addEventListener("click", function () {
   loginBtn.classList.add("d-none");
   span.classList.add("d-none");
   signNameId.classList.remove("is-valid");
+  inputEmailId.classList.remove("is-valid");
+  inputPasswordId.classList.remove("is-valid");
   clearInputs();
 });
 // Sign Up Page==============>
@@ -114,6 +124,18 @@ function validUser() {
     ) {
       index = i;
       return true;
+    }
+  }
+}
+function emailsaved() {
+  for (var i = 0; i < users.length; i++) {
+    if (
+      users[i].userEmail == inputEmailId.value 
+    ) {
+      return false;
+    }
+    else{
+      return true
     }
   }
 }
